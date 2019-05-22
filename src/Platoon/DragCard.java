@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class DragCard extends JLabel implements MouseListener, MouseMotionListener {
-
+ //dss
     public DragCard(Card c){
         if (c.getType().equals("Pawn")){
             this.setIcon(new ImageIcon("/pic/"+c.getVal()));
