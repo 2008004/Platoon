@@ -2,11 +2,21 @@ package Platoon;
 
 public class Card {
 
-    private String type = "";
+    private String type = "N/A";
     private int val = 0;
 
     public Card(String type, int val){
         this.val = val;
+        this.type = type;
+
+
+    }
+
+    public Card(int val){
+        this.val = val;
+        this.type = "Pawn";
+    }
+    public Card(String type){
         this.type = type;
     }
 
@@ -28,6 +38,6 @@ public class Card {
 
     @Override
     public String toString(){
-        return this.getType()+":"+this.getType();
+        return this.getType()+":"+this.getVal();
     }
 }
