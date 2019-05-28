@@ -13,6 +13,7 @@ public class Main {
         String[] types = {"King", "Queen", "Jack", "Joker", "Bishop"};
         ArrayList<Card> deck = new ArrayList<Card>();
 
+
         //make cards
         //run twice
         for (int i = 0; i < 2; i++) {
@@ -36,6 +37,8 @@ public class Main {
 
         //shuffle
         Collections.shuffle(deck);
+
+
 
         //debug print deck
         System.out.println(deck);
@@ -74,19 +77,12 @@ public class Main {
         root.add(playerCreation);
 
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        root.setSize(700, 500);
+        root.setSize(700, 600);
+
+
+
+
         root.setVisible(true);
-
-        boolean gameOver = false;
-
-        while (!gameOver){
-
-
-            //debug
-            gameOver = true;
-        }
-
-
 
     }
 

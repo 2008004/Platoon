@@ -16,6 +16,7 @@ public class Card {
         this.val = val;
         this.type = "Pawn";
     }
+
     public Card(String type){
         this.type = type;
     }

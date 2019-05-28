@@ -1,15 +1,20 @@
 package Platoon;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class DragCard extends JLabel implements MouseListener, MouseMotionListener {
- //dss
+
     public DragCard(Card c){
         if (c.getType().equals("Pawn")){
-            this.setIcon(new ImageIcon("/pic/"+c.getVal()));
+            this.setSize(new Dimension(71,100));
+            ImageIcon img = new ImageIcon("pics/"+c.getVal()+".png");
+            Image myImage = img.getImage();
+            Image newImg = myImage.getScaledInstance(this.getWidth(),this.getHeight(), Image.SCALE_SMOOTH);
+            this.setIcon(new ImageIcon(newImg));
         }
     }
 
