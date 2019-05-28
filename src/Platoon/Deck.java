@@ -52,6 +52,22 @@ public class Deck {
         return deck.get(0);
     }
 
+    public void selectionShuffle() {
+        ArrayList<Card> values = this.deck;
+        ArrayList<Card> shuffled = new ArrayList<Card>();
+        int size = values.size();
+        for(int x = 0; x < values.size(); x++)
+        {
+            int random = (int) (Math.random() * (values.size() - 1));
+            Card tempValue = values.get(random);
+            Card newValue = values.get(size-1);
+            values.set((size-1), tempValue);
+            values.set(random, newValue);
+            shuffled.set((size - 1), tempValue);
+            System.out.println(random);
+        }
+        deck = shuffled;
+    }
 
 
 }
