@@ -8,13 +8,25 @@ import java.awt.event.MouseMotionListener;
 
 public class DragCard extends JLabel implements MouseListener, MouseMotionListener {
 
-    public DragCard(Card c){
-        if (c.getType().equals("Pawn")){
-            this.setSize(new Dimension(71,100));
-            ImageIcon img = new ImageIcon("pics/"+c.getVal()+".png");
+    private int val;
+    private String type;
+
+    public DragCard(Card c) {
+        this.val = c.getVal();
+        this.type = c.getType();
+        if (c.getType().equals("Pawn")) {
+            this.setSize(new Dimension(71, 100));
+            ImageIcon img = new ImageIcon("pics/" + c.getVal() + ".png");
             Image myImage = img.getImage();
-            Image newImg = myImage.getScaledInstance(this.getWidth(),this.getHeight(), Image.SCALE_SMOOTH);
+            Image newImg = myImage.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
             this.setIcon(new ImageIcon(newImg));
+        } else if (c.getType().equals("King") || c.getType().equals("Jack") || c.getType().equals("Queen") || c.getType().equals("Joker") || c.getType().equals("Bishop")) {
+            this.setSize(new Dimension(71, 100));
+            ImageIcon img = new ImageIcon("pics/" + c.getType() + ".png");
+            Image myImage = img.getImage();
+            Image newImg = myImage.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
+            this.setIcon(new ImageIcon(newImg));
+
         }
     }
 

@@ -1,21 +1,22 @@
 package Platoon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
     private ArrayList<Card> deck = new ArrayList<Card>();
 
 
-    public Deck( int[] vals){
-        for(int i = 0; i <= 2; i++) {
+    public Deck(int[] vals) {
+        for (int i = 0; i < 2; i++) {
             for (int x = 0; x < vals.length; x++) {
                 deck.add(new Card(vals[x]));
             }
         }
-        }
+    }
 
-    public Deck(String[] types){
-        for(int i = 1; i<= 2; i++) {
+    public Deck(String[] types) {
+        for (int i = 1; i <= 2; i++) {
             for (int x = 0; x < types.length; x++) {
                 int c = 0;
                 if (types[x].equals("King") || types[x].equals("Queen") || types[x].equals("Jack")) {
@@ -27,10 +28,7 @@ public class Deck {
 
             }
         }
-        }
-
-
-
+    }
 
 
     public ArrayList<Card> getDeck() {
@@ -41,14 +39,14 @@ public class Deck {
         this.deck = deck;
     }
 
-    public Deck(ArrayList<Card> cards){
-        for (Card v:cards){
+    public Deck(ArrayList<Card> cards) {
+        for (Card v : cards) {
             this.deck.add(v);
         }
 
     }
 
-    public Card deal(){
+    public Card deal() {
         Card c = deck.get(0);
         this.deck.remove(0);
         return c;
@@ -58,17 +56,20 @@ public class Deck {
         ArrayList<Card> values = this.deck;
         ArrayList<Card> shuffled = new ArrayList<Card>();
         int size = values.size();
-        for(int x = 0; x < values.size(); x++)
-        {
+        for (int x = 0; x < values.size(); x++) {
             int random = (int) (Math.random() * (values.size() - 1));
             Card tempValue = values.get(random);
-            Card newValue = values.get(size-1);
-            values.set((size-1), tempValue);
+            Card newValue = values.get(size - 1);
+            values.set((size - 1), tempValue);
             values.set(random, newValue);
             shuffled.set((size - 1), tempValue);
             System.out.println(random);
         }
         deck = shuffled;
+    }
+
+    public void easyShuffle(){
+        Collections.shuffle(this.deck);
     }
 
 

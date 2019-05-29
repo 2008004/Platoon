@@ -5,19 +5,19 @@ public class Card {
     private String type = "N/A";
     private int val = 0;
 
-    public Card(String type, int val){
+    public Card(String type, int val) {
         this.val = val;
         this.type = type;
 
 
     }
 
-    public Card(int val){
+    public Card(int val) {
         this.val = val;
         this.type = "Pawn";
     }
 
-    public Card(String type){
+    public Card(String type) {
         this.type = type;
     }
 
@@ -38,7 +38,7 @@ public class Card {
     }
 
     @Override
-    public String toString(){
-        return this.getType()+":"+this.getVal();
+    public String toString() {
+        return this.getType() + ":" + this.getVal();
     }
 }
