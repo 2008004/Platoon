@@ -49,7 +49,9 @@ public class Deck {
     }
 
     public Card deal(){
-        return deck.get(0);
+        Card c = deck.get(0);
+        this.deck.remove(0);
+        return c;
     }
 
     public void selectionShuffle() {
