@@ -7,7 +7,7 @@ public class Deck {
 
 
     public Deck( int[] vals){
-        for(int i = 0; i <= 2; i++) {
+        for(int i = 1; i <= 2; i++) {
             for (int x = 0; x < vals.length; x++) {
                 deck.add(new Card(vals[x]));
             }
