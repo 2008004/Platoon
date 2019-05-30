@@ -1,6 +1,7 @@
 package Platoon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
     private ArrayList<Card> deck = new ArrayList<Card>();
@@ -71,5 +72,8 @@ public class Deck {
         deck = shuffled;
     }
 
+    public void easyShuffle(){
+        Collections.shuffle(this.deck);
+    }
 
 }

@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class ArmyTracker extends JLabel {
 
-    public ArmyTracker(ArrayList<Card> hand) {
+    public ArmyTracker(Army hand) {
         int totalVal = 0;
         ArrayList<String> typeList = new ArrayList<String>();
-        for (int i = 0; i < hand.size() - 1; i++) {
-            Card c = hand.get(i);
+        for (int i = 0; i < hand.getSize() - 1; i++) {
+            DragCard c = hand.getCard(i);
             if (c.getType().equals("Pawn")) {
                 totalVal += c.getVal();
             } else {

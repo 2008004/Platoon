@@ -11,6 +11,22 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
     private int val;
     private String type;
 
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public DragCard(Card c) {
         this.val = c.getVal();
         this.type = c.getType();
@@ -58,7 +74,7 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
-
+        this.setLocation(mouseEvent.getX(), mouseEvent.getY());
     }
 
     @Override
