@@ -69,7 +69,7 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {
-
+        System.out.println(mouseEvent.getSource());
     }
 
     @Override
@@ -83,9 +83,11 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
         Component p = c.getParent();
         Point point = p.getMousePosition();
 
+        try {
+            this.setLocation(point);
+        }catch (Exception e){
 
-        this.setLocation(point);
-
+        }
     }
 
     @Override
