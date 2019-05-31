@@ -42,6 +42,17 @@ public class Player {
         return hands;
     }
 
+    public void printHand(int hand){
+
+        for(int x= 0; x < hands.get(hand).size(); x++) {
+
+         if(!hands.get(hand).get(x).getType().equals("pawn")){
+            System.out.println(hands.get(hand).get(x).getType());}
+         else{
+            System.out.println(hands.get(hand).get(x).getVal());}
+        }
+    }
+
     public Boolean compareHands(ArrayList<Card> hand1, ArrayList<Card> hand2) {
         int hand1Value = 0;
         int hand2Value = 0;
@@ -113,7 +124,7 @@ public class Player {
                 return true;
             }
         }
-        if (hand1Value > hand2Value) {
+        if (hand1Value >= hand2Value) {
             if (!Joker1 && !Joker2) {
                 return true;
             } else if (Joker1 && !Joker2) {

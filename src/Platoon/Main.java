@@ -6,19 +6,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-
+    int[] vals = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+    String[] types = {"King", "Queen", "Jack", "Joker", "Bishop"};
+    Deck numDeck = new Deck(vals);
+    Deck faceDeck = new Deck(types);
 
     public static void main(String args[]) {
 
-        //deck setup
-        int[] vals = {2, 3, 4, 5, 6, 7, 8, 9, 10};
-        String[] types = {"King", "Queen", "Jack", "Joker", "Bishop"};
-        Deck numDeck = new Deck(vals);
-        Deck faceDeck = new Deck(types);
-        //deck setup end
 
 
-        //GUI setup
+
+
+        //shuffle
+
+        //debug print deck
+
         JFrame root = new JFrame();
         root.setLayout(new GridLayout(5, 1));
 
@@ -55,43 +57,16 @@ public class Main {
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         root.setSize(700, 500);
         root.setVisible(true);
-        //GUI setup end
-
 
         boolean gameOver = false;
-        numDeck.easyShuffle();
-        faceDeck.easyShuffle();
 
-        while (!gameOver) {
-
-            for (int i = 0; i < 6; i++) {
-                DragCard dragCard = new DragCard(numDeck.deal());
-                playerCreation.add(dragCard);
-            }
-            for (int i = 0; i < 4; i++) {
-                DragCard dragCard = new DragCard(faceDeck.deal());
-                playerCreation.add(dragCard);
-            }
+        while (!gameOver){
 
 
-            for (int i = 0; i < 5; i++){
-                JPanel cardPanel = new JPanel();
-                cardPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-                cardPanel.setSize(71, 100);
-
-                JPanel valPanel = new JPanel();
-                valPanel.setBorder(BorderFactory.createEtchedBorder());
-
-
-                playerDeck.add(cardPanel);
-                playerDeck.add(valPanel);
-            }
-
-            root.repaint();
-            root.revalidate();
             //debug
             gameOver = true;
         }
+
 
 
     }

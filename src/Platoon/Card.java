@@ -14,7 +14,7 @@ public class Card {
 
     public Card(int val) {
         this.val = val;
-        this.type = "Pawn";
+        this.type =  "pawn";
     }
 
     public Card(String type) {
