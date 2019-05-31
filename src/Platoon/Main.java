@@ -2,73 +2,43 @@ package Platoon;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-    int[] vals = {2, 3, 4, 5, 6, 7, 8, 9, 10};
-    String[] types = {"King", "Queen", "Jack", "Joker", "Bishop"};
-    Deck numDeck = new Deck(vals);
-    Deck faceDeck = new Deck(types);
+    public Point p;
 
     public static void main(String args[]) {
 
+        //deck setup
+        int[] vals = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] types = {"King", "Queen", "Jack", "Joker", "Bishop"};
+        Deck numDeck = new Deck(vals);
+        Deck faceDeck = new Deck(types);
+        //deck setup end
 
+        //GUI setup
+        JFrame frame = new JFrame();
+        Game game = new Game();
+        frame.setContentPane(game.root);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setSize(frame.getContentPane().getPreferredSize());
 
-
-
-        //shuffle
-
-        //debug print deck
-
-        JFrame root = new JFrame();
-        root.setLayout(new GridLayout(5, 1));
-
-
-        JPanel winCount = new JPanel();
-        winCount.setBorder(BorderFactory.createEtchedBorder());
-        winCount.setLayout(new GridLayout(1, 5));
-        root.add(winCount);
-
-
-        JPanel cpuDeck = new JPanel();
-        cpuDeck.setBorder(BorderFactory.createEtchedBorder());
-        cpuDeck.setLayout(new GridLayout(1, 5));
-        root.add(cpuDeck);
-
-
-        JPanel playArea = new JPanel();
-        playArea.setBorder(BorderFactory.createEtchedBorder());
-        playArea.setLayout(new GridLayout(1, 5));
-        root.add(playArea);
-
-
-        JPanel playerDeck = new JPanel();
-        playerDeck.setBorder(BorderFactory.createEtchedBorder());
-        playerDeck.setLayout(new GridLayout(1, 5));
-        root.add(playerDeck);
-
-
-        JPanel playerCreation = new JPanel();
-        playerCreation.setBorder(BorderFactory.createEtchedBorder());
-        playerCreation.setLayout(new GridLayout(1, 10));
-        root.add(playerCreation);
-
-        root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        root.setSize(700, 500);
-        root.setVisible(true);
-
-        boolean gameOver = false;
-
-        while (!gameOver){
-
-
-            //debug
-            gameOver = true;
+        //player hand
+        for (int i = 0; i < 6; i++){
+            DragCard d = new DragCard(numDeck.deal());
+            game.playerHandPane.add(d);
+            d.addMouseListener(d);
+            d.addMouseMotionListener(d);
         }
 
 
+        frame.setVisible(true);
+
 
     }
+
 
 }
