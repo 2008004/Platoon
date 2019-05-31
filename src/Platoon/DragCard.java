@@ -8,6 +8,8 @@ import java.awt.event.MouseMotionListener;
 
 public class DragCard extends JLabel implements MouseListener, MouseMotionListener {
 
+
+
     private int val;
     private String type;
 
@@ -47,6 +49,7 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
     }
 
 
+
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
 
@@ -54,7 +57,9 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
+        JPanel p = (JPanel)mouseEvent.getComponent().getParent();
 
+        p.setComponentZOrder(this,0);
     }
 
     @Override
@@ -74,11 +79,18 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
-        this.setLocation(mouseEvent.getX(), mouseEvent.getY());
+        Component c = mouseEvent.getComponent();
+        Component p = c.getParent();
+        Point point = p.getMousePosition();
+
+
+        this.setLocation(point);
+
     }
 
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
 
     }
+
 }
