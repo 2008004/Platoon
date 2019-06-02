@@ -8,7 +8,7 @@
     <properties>
       <minimumSize width="700" height="500"/>
       <name value="Platoon"/>
-      <preferredSize width="700" height="500"/>
+      <preferredSize width="800" height="500"/>
     </properties>
     <border type="none"/>
     <children>
