@@ -29,13 +29,13 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 		this.type = type;
 	}
 
-	public void setParent(JPanel parent){
+	public void setParent(JPanel parent) {
 		this.parent = parent;
 	}
 
-	public void setHoverOver(Component component){
+	public void setHoverOver(Component component) {
 		this.hoverOver = component;
-		System.out.println(hoverOver);
+//		System.out.println(hoverOver);
 	}
 
 	public DragCard(Card c) {
@@ -75,17 +75,17 @@ public class DragCard extends JLabel implements MouseListener, MouseMotionListen
 	public void mouseReleased(MouseEvent mouseEvent) {
 
 
-		if (hoverOver instanceof Army){
+		if (hoverOver instanceof Army) {
 			((Army) hoverOver).addCard(this);
 			((Army) hoverOver).getAt().updateTracker();
 			((Army) hoverOver).refresh();
 			getRootPane().remove(this);
-		}else{
+		} else {
 
-		parent.add(this);
-		this.setLocation(homeP);
-		getRootPane().repaint();
-		getRootPane().revalidate();
+			parent.add(this);
+			this.setLocation(homeP);
+			getRootPane().repaint();
+			getRootPane().revalidate();
 
 		}
 	}

@@ -8,22 +8,32 @@ import java.util.ArrayList;
 
 public class Army extends JLabel implements MouseListener {
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	int id = 0;
 	ArmyTracker at;
 	public Component component;
 
 	private ArrayList<DragCard> armyDeck = new ArrayList<DragCard>();
 
 	public Army() {
-		this.setMaximumSize(new Dimension(71,100));
+		this.setMaximumSize(new Dimension(71, 100));
 		this.setSize(new Dimension(71, 100));
 		if (armyDeck.size() > 0) {
 			ImageIcon img = new ImageIcon("pics/facedown.png");
 			Image myImg = img.getImage();
 			Image newImg = myImg.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
 			this.setIcon(new ImageIcon(newImg));
-		}else{
+		} else {
 			this.setIcon(new ImageIcon("pics/blank.png"));
 		}
+
 	}
 
 
@@ -38,7 +48,7 @@ public class Army extends JLabel implements MouseListener {
 		this.revalidate();
 	}
 
-	public void addCard(DragCard d){
+	public void addCard(DragCard d) {
 		this.armyDeck.add(d);
 	}
 
@@ -83,13 +93,13 @@ public class Army extends JLabel implements MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		System.out.println(e.getSource());
+//		System.out.println(e.getSource());
 
-		try{
-			DragCard d = (DragCard)	getRootPane().getComponentAt(e.getXOnScreen()+50,e.getYOnScreen()+50)	;
+		try {
+			DragCard d = (DragCard) getRootPane().getComponentAt(e.getXOnScreen() + 50, e.getYOnScreen() + 50);
 			d.setHoverOver(this);
 //			System.out.println(d);
-		}catch(Exception ex){
+		} catch (Exception ex) {
 
 		}
 

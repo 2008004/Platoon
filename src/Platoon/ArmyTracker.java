@@ -25,7 +25,7 @@ public class ArmyTracker extends JLabel {
 		info = Integer.toString(vals);
 		for (int i = 0; i < faceList.size(); i++) {
 			info += "\n" + faceList.get(i);
-			System.out.println(info);
+//			System.out.println(info);
 		}
 
 	}
@@ -43,20 +43,25 @@ public class ArmyTracker extends JLabel {
 				faceList.add(troopList.get(i).getType());
 			}
 		}
-
+		String infoP2 = "";
 		info = Integer.toString(vals);
 		for (int i = 0; i < faceList.size(); i++) {
-			info += "<br/>" + faceList.get(i);
-			System.out.println(info);
-			if (!faceList.get(i).equals("Joker") || !faceList.get(i).equals("Bishop")) {
+			if (faceList.get(i).equals("King") || faceList.get(i).equals("Queen") || faceList.get(i).equals("Jack")) {
 				vals += 10;
 			}
+			infoP2 += "<br/>" + faceList.get(i);
+//			System.out.println(info);
+
 		}
-		info = "<html>" + info + "</html>";
-		this.setText(info);
+
+		String disp = "<html>" + Integer.toString(vals) + infoP2 + "<html/>";
+
+		this.setText(disp);
 		getRootPane().repaint();
 		getRootPane().revalidate();
 
 	}
+
+
 
 }

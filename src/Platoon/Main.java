@@ -9,11 +9,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-	public Point p;
+
 
 
 	public static void main(String args[]) {
 
+		int armyCount = 1;
 
 		//deck setup
 		int[] vals = {2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -38,7 +39,8 @@ public class Main {
 			ArmyTracker at = new ArmyTracker(a);
 			at.setBorder(BorderFactory.createEtchedBorder());
 			game.playerDeckPane.add(at);
-
+			a.setId(armyCount++);
+			System.out.println(a.getId());
 		}
 
 
