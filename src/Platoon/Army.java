@@ -6,7 +6,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import static Platoon.Main.playerSelected;
+
 public class Army extends JLabel implements MouseListener {
+
+
 
 	public int getId() {
 		return id;
@@ -33,7 +37,7 @@ public class Army extends JLabel implements MouseListener {
 		} else {
 			this.setIcon(new ImageIcon("pics/blank.png"));
 		}
-
+		this.setBorder(BorderFactory.createLineBorder(Color.WHITE,5));
 	}
 
 
@@ -70,6 +74,15 @@ public class Army extends JLabel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+
+		if (armyDeck.size() > 0 && !playerSelected){
+			this.setBorder(BorderFactory.createLineBorder(Color.RED,5));
+			playerSelected = true;
+		}else if (armyDeck.size() > 0 && playerSelected){
+			this.setBorder(BorderFactory.createLineBorder(Color.WHITE,5));
+			playerSelected = false;
+		}
+
 
 	}
 

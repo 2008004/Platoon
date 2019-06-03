@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-
-
+	public static boolean playerSelected = false;
+	public static boolean aiSelected = false;
 
 	public static void main(String args[]) {
+
 
 		int armyCount = 1;
 
@@ -25,7 +26,7 @@ public class Main {
 
 		//GUI setup
 		JFrame frame = new JFrame();
-		Game game = new Game();
+		 Game game = new Game();
 		frame.setContentPane(game.root);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setSize(frame.getContentPane().getPreferredSize());
@@ -33,7 +34,7 @@ public class Main {
 
 		for (int i = 0; i < 5; i++) {
 			Army a = new Army();
-			a.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//			a.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 			game.playerDeckPane.add(a);
 			a.addMouseListener(a);
 			ArmyTracker at = new ArmyTracker(a);

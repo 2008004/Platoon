@@ -6,6 +6,47 @@ import java.util.ArrayList;
 public class ArmyTracker extends JLabel {
 	String info = "";
 	Army a;
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public Army getA() {
+		return a;
+	}
+
+	public void setA(Army a) {
+		this.a = a;
+	}
+
+	public ArrayList<DragCard> getTroopList() {
+		return troopList;
+	}
+
+	public void setTroopList(ArrayList<DragCard> troopList) {
+		this.troopList = troopList;
+	}
+
+	public int getVals() {
+		return vals;
+	}
+
+	public void setVals(int vals) {
+		this.vals = vals;
+	}
+
+	public ArrayList<String> getFaceList() {
+		return faceList;
+	}
+
+	public void setFaceList(ArrayList<String> faceList) {
+		this.faceList = faceList;
+	}
+
 	ArrayList<DragCard> troopList = new ArrayList<DragCard>();
 	int vals = 0;
 	ArrayList<String> faceList = new ArrayList<String>();
